@@ -81,4 +81,6 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
     implementation("com.github.bumptech.glide:glide:4.15.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2")
+
 }

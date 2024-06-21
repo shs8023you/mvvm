@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DataBindingActivity::class.java)
             startActivity(intent)
         }
-        mBinding.dateBinding.setOnClickListener {
+        mBinding.customDateBinding.setOnClickListener {
             val intent = Intent(this, CustomDataBindingActivity::class.java)
             startActivity(intent)
         }

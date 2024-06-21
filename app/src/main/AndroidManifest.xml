@@ -24,7 +24,8 @@
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".ui.CustomDataBindingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"

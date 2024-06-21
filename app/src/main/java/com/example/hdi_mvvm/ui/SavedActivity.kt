@@ -1,15 +1,12 @@
 package com.example.hdi_mvvm.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.hdi_mvvm.BR
 import com.example.hdi_mvvm.R
-import com.example.hdi_mvvm.databinding.ActivityDataBindingBinding
 import com.example.hdi_mvvm.databinding.ActivitySavedBinding
-import com.example.hdi_mvvm.databinding.ActivityXmlMainBinding
 import com.example.hdi_mvvm.vm.SavedStateViewModel
 
 class SavedActivity : AppCompatActivity() {

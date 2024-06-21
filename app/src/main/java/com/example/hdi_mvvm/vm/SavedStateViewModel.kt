@@ -12,9 +12,10 @@ import kotlinx.coroutines.withContext
 
 /**
  * 可以保存 状态的ViewModel 比如内存不足页面被回收时
+ *
+ * 这种并不属于屏幕旋转,所以ViewModel会重建, 输入框的内容会丢失
  */
 class SavedStateViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
-
 
 
     var userName = MutableLiveData<String>("")
@@ -45,14 +46,11 @@ class SavedStateViewModel(private val savedStateHandle: SavedStateHandle) : View
     }
 
 
-
-
     /**
      * 保存数据
      */
     private fun saveData() {
-        savedStateHandle["query"] = "${userName.value} ${pwd.value}"
-        data.value = "${userName.value} ${pwd.value}"
+        savedStateHandle[DATA_SAVE_KEY] = "${userName.value} ${pwd.value}"
     }
 
 

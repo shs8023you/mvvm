@@ -1,19 +1,10 @@
 package com.example.hdi_mvvm.vm
 
 import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
 
 
 /**
@@ -23,7 +14,9 @@ import kotlinx.coroutines.withContext
 class LifecycleViewModel : ViewModel(), DefaultLifecycleObserver {
 
 
-    val text = MutableLiveData<String>("")
+    // 什么是 粘性事件？
+    // 即发射的事件如果早于注册，那么注册之后依然可以接收到的事件称为粘性事件
+    var text = MutableLiveData("默认值")
 
     init {
         Log.d("LifecycleViewModel", "init")
@@ -32,14 +25,14 @@ class LifecycleViewModel : ViewModel(), DefaultLifecycleObserver {
     override fun onResume(owner: LifecycleOwner) {
         super.onResume(owner)
         Log.d("LifecycleViewModel", "onResume")
-        text.value = "onResume "
+        text.value = "onResume"
 
     }
 
     override fun onPause(owner: LifecycleOwner) {
         super.onPause(owner)
         Log.d("LifecycleViewModel", "onPause")
-        text.value = "onPause "
+        text.value = "onPause"
     }
 
 }

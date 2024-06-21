@@ -15,29 +15,34 @@
         android:theme="@style/Theme.Hdi_mvvm"
         tools:targetApi="31">
         <activity
-            android:theme="@style/Theme.AppCompat"
-            android:name=".DataBindingActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:name=".ui.SavedActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" />
         <activity
-            android:theme="@style/Theme.AppCompat"
-            android:name=".XmlMainActivity"
-            android:exported="true">
+            android:name=".ui.LifeCycleActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".ui.CustomDataBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.DataBindingActivity"
             android:exported="true"
-            android:theme="@style/Theme.Hdi_mvvm">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".ui.XmlMainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
     </application>
 
 </manifest>

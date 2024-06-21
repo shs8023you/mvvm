@@ -20,20 +20,26 @@ import kotlinx.coroutines.withContext
  * 监听View的生命周期
  * DefaultLifecycleObserver 是一个接口, 所以可以绑定任何类,不一定是ViewModel
  */
-class LifecycleViewModel() : ViewModel(), DefaultLifecycleObserver {
+class LifecycleViewModel : ViewModel(), DefaultLifecycleObserver {
+
+
+    val text = MutableLiveData<String>("")
 
     init {
-        Log.d("LifecycleViewModel","init")
+        Log.d("LifecycleViewModel", "init")
     }
 
     override fun onResume(owner: LifecycleOwner) {
         super.onResume(owner)
-        Log.d("LifecycleViewModel","onResume")
+        Log.d("LifecycleViewModel", "onResume")
+        text.value = "onResume "
+
     }
 
     override fun onPause(owner: LifecycleOwner) {
         super.onPause(owner)
-        Log.d("LifecycleViewModel","onPause")
+        Log.d("LifecycleViewModel", "onPause")
+        text.value = "onPause "
     }
 
 }

@@ -1,9 +1,11 @@
-package com.example.hdi_mvvm
+package com.example.hdi_mvvm.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.hdi_mvvm.BR
+import com.example.hdi_mvvm.R
 import com.example.hdi_mvvm.databinding.ActivityDataBindingBinding
 import com.example.hdi_mvvm.vm.DataBindingViewModel
 
@@ -19,7 +21,9 @@ class DataBindingActivity : AppCompatActivity() {
 
         // 这是DataBinding 双向绑定写法
         // 泛型是自动生成的 规则是 : 布局文件+Binding
-        mBinding = DataBindingUtil.setContentView<ActivityDataBindingBinding>(this,R.layout.activity_data_binding)
+        mBinding = DataBindingUtil.setContentView<ActivityDataBindingBinding>(this,
+            R.layout.activity_data_binding
+        )
         // 给vm变量赋值  需要引入kotlin-kapt 才可以生成BR文件
         mBinding.setVariable(BR.vm,mViewModel)
     }

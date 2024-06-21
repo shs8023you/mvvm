@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.hdi_mvvm.vm.DataBindingViewModel" />
+            type="com.example.hdi_mvvm.vm.SavedStateViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,16 +17,15 @@
         tools:context=".ui.DataBindingActivity">
 
 
-        <ImageView
-            app:layout_constraintTop_toTopOf="parent"
+        <TextView
+            android:id="@+id/titleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:imgUrl="@{vm.imageUrl}"
-            app:placeholder="@{@drawable/ic_launcher_background}"
-            />
+            android:layout_marginTop="30dp"
+            android:text="@{vm.data,default = 这是默认值}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/username"

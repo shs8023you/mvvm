@@ -23,7 +23,7 @@ class XmlMainActivity : ComponentActivity() {
 
     private fun initViews() {
 
-        // 单项绑定 : 监听值的变化
+        // 监听值的变化
         // 输入框 内容变化时 通知ViewModel
         mBinding.username.addTextChangedListener {
             mViewModel.userName.value = it.toString()
